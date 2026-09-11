@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280" width="100%" height="100%">
+  <defs>
+    <linearGradient id="dirBg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="60%" stop-color="#F7FBFD"/>
+      <stop offset="100%" stop-color="#EAF6FB"/>
+    </linearGradient>
+    <linearGradient id="suitGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#088740"/>
+      <stop offset="100%" stop-color="#066B32"/>
+    </linearGradient>
+  </defs>
+  <rect width="280" height="280" rx="140" fill="url(#dirBg1)"/>
+  <circle cx="140" cy="140" r="136" fill="none" stroke="#E5C77D" stroke-width="2.5"/>
+  
+  <!-- Male Corporate Portrait Silhouette -->
+  <path d="M95 95 C95 65 110 50 140 50 C170 50 185 65 185 95 C175 85 160 75 140 75 C120 75 105 85 95 95 Z" fill="#18201D"/>
+  <path d="M105 95 C105 80 120 72 140 72 C160 72 175 80 175 95 C175 130 160 150 140 150 C120 150 105 130 105 95 Z" fill="#F7C8A0"/>
+  <circle cx="104" cy="110" r="7" fill="#F7C8A0"/>
+  <circle cx="176" cy="110" r="7" fill="#F7C8A0"/>
+  <rect x="130" y="142" width="20" height="25" fill="#E8B58B"/>
+  <polygon points="120,165 140,192 160,165 150,162 130,162" fill="#FFFFFF"/>
+  <polygon points="137,170 143,170 145,210 140,215 135,210" fill="#D2A037"/>
+  <!-- Suit in Deep Green -->
+  <path d="M70 270 C70 200 90 170 120 168 L140 215 L160 168 C190 170 210 200 210 270 Z" fill="url(#suitGrad1)"/>
+  <!-- Lapel edges -->
+  <path d="M120 168 L138 215" stroke="#E5C77D" stroke-width="1.5"/>
+  <path d="M160 168 L142 215" stroke="#E5C77D" stroke-width="1.5"/>
+</svg>

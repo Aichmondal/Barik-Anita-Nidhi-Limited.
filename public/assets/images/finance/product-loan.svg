@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="100%" height="100%">
+  <defs>
+    <linearGradient id="plLightBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="70%" stop-color="#F7FBFD"/>
+      <stop offset="100%" stop-color="#EAF6FB"/>
+    </linearGradient>
+    <radialGradient id="plSkyGlow" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#CBE7F5" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="400" height="250" rx="14" fill="url(#plLightBg)" stroke="#DCECEF" stroke-width="1.2"/>
+  <circle cx="200" cy="115" r="95" fill="url(#plSkyGlow)"/>
+  <circle cx="200" cy="115" r="85" fill="none" stroke="#DCECEF" stroke-width="1" stroke-dasharray="4 6"/>
+
+  <!-- Product Financing Vector (Modern Product Package, Gadgets & Tools) -->
+  <g transform="translate(130, 42)">
+    <!-- Isometric Package / Product Box in Soft Sky Blue & White with Green Ribbon -->
+    <path d="M70 20 L120 45 L70 70 L20 45 Z" fill="#EAF6FB" stroke="#DCECEF" stroke-width="1.5"/>
+    <path d="M20 45 L70 70 L70 130 L20 105 Z" fill="#FFFFFF" stroke="#DCECEF" stroke-width="1.5"/>
+    <path d="M120 45 L70 70 L70 130 L120 105 Z" fill="#F7FBFD" stroke="#DCECEF" stroke-width="1.5"/>
+
+    <!-- Gold & Green Packaging Ribbon -->
+    <path d="M70 20 L70 70 L70 130" stroke="#088740" stroke-width="2.5" fill="none"/>
+    <path d="M45 32 L95 57" stroke="#D2A037" stroke-width="2.5" fill="none"/>
+    
+    <!-- Verified Badge Float -->
+    <circle cx="115" cy="40" r="16" fill="#088740"/>
+    <path d="M109 40 L113 44 L121 36" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+
+  <!-- Frequency Tag: Yearly 4 Times Loan -->
+  <g transform="translate(115, 192)">
+    <rect width="170" height="34" rx="17" fill="#FFFFFF" stroke="#E5C77D" stroke-width="1.2"/>
+    <circle cx="18" cy="17" r="5" fill="#088740"/>
+    <text x="32" y="21" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#18201D">Yearly 4 Times Loan</text>
+  </g>
+</svg>

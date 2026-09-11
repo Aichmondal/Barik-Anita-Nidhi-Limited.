@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="100%" height="100%">
+  <circle cx="60" cy="60" r="56" fill="#F0FDF4" stroke="#20A65A" stroke-width="2"/>
+  <!-- Stepped growth / monthly accumulation bars -->
+  <rect x="30" y="70" width="12" height="20" rx="3" fill="#20A65A" opacity="0.4"/>
+  <rect x="46" y="55" width="12" height="35" rx="3" fill="#20A65A" opacity="0.7"/>
+  <rect x="62" y="40" width="12" height="50" rx="3" fill="#20A65A"/>
+  <rect x="78" y="25" width="12" height="65" rx="3" fill="#09275F"/>
+  <!-- Upward Trend Line -->
+  <path d="M26 65 L46 50 L62 35 L86 20" stroke="#F59E0B" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <polygon points="86,16 94,22 84,26" fill="#F59E0B"/>
+</svg>

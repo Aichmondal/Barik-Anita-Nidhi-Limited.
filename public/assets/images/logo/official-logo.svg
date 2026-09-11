@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Soft sky-blue radial gradient background matching official logo -->
+    <radialGradient id="baLogoBg" cx="42%" cy="38%" r="62%">
+      <stop offset="0%" stop-color="#E3F3FC"/>
+      <stop offset="55%" stop-color="#CFE7F6"/>
+      <stop offset="85%" stop-color="#B6DBEE"/>
+      <stop offset="100%" stop-color="#9ECBE4"/>
+    </radialGradient>
+
+    <!-- Warm golden-amber gradient for the letter 'B' -->
+    <linearGradient id="baGoldGrad" x1="20%" y1="15%" x2="80%" y2="85%">
+      <stop offset="0%" stop-color="#F2BE3B"/>
+      <stop offset="40%" stop-color="#DF9F1C"/>
+      <stop offset="80%" stop-color="#C5850E"/>
+      <stop offset="100%" stop-color="#AA6F08"/>
+    </linearGradient>
+
+    <!-- Deep lustrous emerald green gradient for the letter 'A' -->
+    <linearGradient id="baGreenGrad" x1="30%" y1="10%" x2="70%" y2="90%">
+      <stop offset="0%" stop-color="#0CA64E"/>
+      <stop offset="45%" stop-color="#088740"/>
+      <stop offset="100%" stop-color="#056B32"/>
+    </linearGradient>
+
+    <!-- Outer rim soft shadow -->
+    <filter id="baSoftShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#4B7085" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Main Circular Disc -->
+  <circle cx="250" cy="250" r="236" fill="url(#baLogoBg)"/>
+  
+  <!-- Delicate Outer Rings -->
+  <circle cx="250" cy="250" r="236" fill="none" stroke="#6F94AA" stroke-width="2" stroke-opacity="0.55"/>
+  <circle cx="250" cy="250" r="232" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-opacity="0.8"/>
+
+  <!-- INTERLOCKING MONOGRAM: 'B' (Gold) and 'A' (Green) -->
+  <g id="monogram-group" transform="translate(0, 0)">
+    
+    <!-- LETTER 'A' (Emerald Green) -->
+    <!-- Drawn first so the golden 'B' gracefully overlaps the left spine, matching the official mark -->
+    <g id="letter-A">
+      <!-- Outer Shape of 'A' -->
+      <path d="
+        M 312 138
+        L 262 265
+        L 290 265
+        L 300 240
+        L 348 240
+        L 348 240
+        L 326 182
+        Z
+      " fill="none"/>
+
+      <!-- Complete 'A' Path with Counter Cutout -->
+      <path d="
+        M 312 138 
+        L 263 265
+        L 282 302
+        L 282 302
+        L 285 302
+        L 285 288
+        L 332 288
+        L 342 360
+        L 334 360
+        C 330 360 327 360.5 327 362
+        L 327 365
+        L 432 365
+        L 432 362
+        C 432 360.5 429 360 425 360
+        L 412 360
+        L 348 138
+        Z
+        M 324 195
+        L 340 252
+        L 298 252
+        Z
+      " fill="url(#baGreenGrad)"/>
+
+      <!-- Crossbar and Left Leg of 'A' tucking into the 'B' junction -->
+      <path d="
+        M 263 265
+        L 250 302
+        L 285 302
+        L 295 272
+        L 282 272
+        Z
+      " fill="url(#baGreenGrad)"/>
+
+      <!-- Bottom Horizontal Crossbar connecting through -->
+      <rect x="282" y="286" width="56" height="16" fill="url(#baGreenGrad)"/>
+    </g>
+
+    <!-- LETTER 'B' (Rich Gold) with Elegant Flourished Tail -->
+    <g id="letter-B">
+      <!-- 'B' Main Body with Inner Counters and Flourishing Serif Tail -->
+      <path d="
+        M 90 146
+        L 182 146
+        C 215 146 242 154 254 172
+        C 263 186 264 204 252 220
+        C 241 234 222 242 198 244
+        C 232 248 256 260 268 278
+        C 278 294 278 316 266 334
+        C 250 354 220 365 178 365
+        C 152 365 132 362 116 354
+        C 94 343 78 322 71 298
+        C 69 290 68 278 68 266
+        C 68 262 72 260 75 263
+        C 80 274 88 290 100 304
+        C 112 318 128 326 148 326
+        L 148 185
+        L 115 185
+        C 104 185 96 182 90 178
+        Z
+
+        M 148 178
+        L 175 178
+        C 198 178 214 184 220 196
+        C 225 206 222 218 212 225
+        C 202 232 186 235 166 235
+        L 148 235
+        Z
+
+        M 148 252
+        L 172 252
+        C 196 252 215 256 226 268
+        C 236 279 238 295 230 309
+        C 222 322 204 330 176 330
+        L 148 330
+        Z
+      " fill="url(#baGoldGrad)"/>
+
+      <!-- Graceful Swan-tail Flourish on the lower left of B -->
+      <path d="
+        M 148 326
+        C 126 326 108 316 95 298
+        C 82 280 75 258 72 266
+        C 68 280 69 300 78 318
+        C 90 342 112 360 142 365
+        C 158 368 175 365 182 365
+        C 165 365 152 350 148 326
+        Z
+      " fill="url(#baGoldGrad)" opacity="0.95"/>
+    </g>
+
+  </g>
+</svg>

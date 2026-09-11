@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="100%" height="100%">
+  <defs>
+    <linearGradient id="mbLightBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="70%" stop-color="#F7FBFD"/>
+      <stop offset="100%" stop-color="#EAF6FB"/>
+    </linearGradient>
+    <radialGradient id="mbSkyGlow" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#CBE7F5" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="mbGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D2A037"/>
+      <stop offset="100%" stop-color="#B88420"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="400" height="250" rx="14" fill="url(#mbLightBg)" stroke="#DCECEF" stroke-width="1.2"/>
+  <circle cx="200" cy="115" r="95" fill="url(#mbSkyGlow)"/>
+  <circle cx="200" cy="115" r="85" fill="none" stroke="#DCECEF" stroke-width="1" stroke-dasharray="4 6"/>
+
+  <!-- Retail Store & Micro Enterprise Awning -->
+  <g transform="translate(130, 42)">
+    <!-- Awning in Brand Green & White -->
+    <path d="M10 32 L130 32 L140 56 L0 56 Z" fill="#088740"/>
+    <path d="M25 32 L35 32 L30 56 L18 56 Z" fill="#FFFFFF" opacity="0.9"/>
+    <path d="M55 32 L65 32 L62 56 L50 56 Z" fill="#FFFFFF" opacity="0.9"/>
+    <path d="M85 32 L95 32 L94 56 L82 56 Z" fill="#FFFFFF" opacity="0.9"/>
+    <path d="M115 32 L125 32 L126 56 L114 56 Z" fill="#FFFFFF" opacity="0.9"/>
+    
+    <!-- Storefront Glass & Counter -->
+    <rect x="10" y="56" width="120" height="74" rx="4" fill="#FFFFFF" stroke="#DCECEF" stroke-width="1.5"/>
+    
+    <!-- Shopkeeper Silhouette -->
+    <circle cx="70" cy="76" r="14" fill="#FBF3DF" stroke="#E5C77D" stroke-width="1.2"/>
+    <path d="M48 110 C48 94 56 90 70 90 C84 90 92 94 92 110 Z" fill="#088740"/>
+    
+    <!-- Upward Enterprise Growth Vector (Gold) -->
+    <path d="M20 115 Q70 95 125 65" stroke="url(#mbGoldGrad)" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <polygon points="125,65 112,67 121,78" fill="#D2A037"/>
+  </g>
+
+  <!-- Frequency Tag: Yearly 4 Times Loan -->
+  <g transform="translate(115, 192)">
+    <rect width="170" height="34" rx="17" fill="#FFFFFF" stroke="#E5C77D" stroke-width="1.2"/>
+    <circle cx="18" cy="17" r="5" fill="#088740"/>
+    <text x="32" y="21" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#18201D">Yearly 4 Times Loan</text>
+  </g>
+</svg>

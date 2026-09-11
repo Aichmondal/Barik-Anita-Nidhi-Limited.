@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280" width="100%" height="100%">
+  <defs>
+    <linearGradient id="dirBg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="60%" stop-color="#F7FBFD"/>
+      <stop offset="100%" stop-color="#EAF6FB"/>
+    </linearGradient>
+    <linearGradient id="suitGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#088740"/>
+      <stop offset="100%" stop-color="#066B32"/>
+    </linearGradient>
+  </defs>
+  <rect width="280" height="280" rx="140" fill="url(#dirBg2)"/>
+  <circle cx="140" cy="140" r="136" fill="none" stroke="#E5C77D" stroke-width="2.5"/>
+  
+  <!-- Male Corporate Portrait with Glasses -->
+  <path d="M96 100 C96 68 110 52 140 52 C170 52 184 68 184 100 C176 88 160 78 140 78 C120 78 104 88 96 100 Z" fill="#18201D"/>
+  <path d="M106 100 C106 82 120 74 140 74 C160 74 174 82 174 100 C174 132 160 152 140 152 C120 152 106 132 106 100 Z" fill="#F3C39D"/>
+  <!-- Glasses -->
+  <rect x="115" y="98" width="20" height="14" rx="3" fill="none" stroke="#52615A" stroke-width="2"/>
+  <rect x="145" y="98" width="20" height="14" rx="3" fill="none" stroke="#52615A" stroke-width="2"/>
+  <path d="M135 104 L145 104" stroke="#52615A" stroke-width="2"/>
+  <circle cx="104" cy="112" r="7" fill="#F3C39D"/>
+  <circle cx="176" cy="112" r="7" fill="#F3C39D"/>
+  <rect x="130" y="145" width="20" height="25" fill="#E2AB84"/>
+  <polygon points="120,165 140,190 160,165 150,162 130,162" fill="#FFFFFF"/>
+  <polygon points="137,168 143,168 145,210 140,215 135,210" fill="#D2A037"/>
+  <!-- Suit in Deep Green -->
+  <path d="M72 270 C72 202 92 170 120 168 L140 215 L160 168 C188 170 208 202 208 270 Z" fill="url(#suitGrad2)"/>
+  <path d="M120 168 L138 215" stroke="#E5C77D" stroke-width="1.5"/>
+  <path d="M160 168 L142 215" stroke="#E5C77D" stroke-width="1.5"/>
+</svg>

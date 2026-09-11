@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="100%" height="100%">
+  <circle cx="60" cy="60" r="56" fill="#FEF3C7" fill-opacity="0.4" stroke="#F59E0B" stroke-width="2"/>
+  <!-- Monthly Calendar with Recurring Return Flow -->
+  <rect x="30" y="32" width="60" height="56" rx="8" fill="#09275F"/>
+  <rect x="30" y="32" width="60" height="16" rx="4" fill="#20A65A"/>
+  <circle cx="44" cy="28" r="3" fill="#FFFFFF"/>
+  <circle cx="76" cy="28" r="3" fill="#FFFFFF"/>
+  <!-- Rupee Symbol In Center -->
+  <text x="60" y="70" font-family="system-ui, sans-serif" font-size="24" font-weight="bold" fill="#F59E0B" text-anchor="middle">₹</text>
+  <!-- Guaranteed Income Checkmark -->
+  <circle cx="78" cy="74" r="12" fill="#20A65A"/>
+  <path d="M73 74 L76 77 L83 70" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+</svg>

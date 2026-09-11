@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280" width="100%" height="100%">
+  <defs>
+    <linearGradient id="dirBg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="60%" stop-color="#F7FBFD"/>
+      <stop offset="100%" stop-color="#EAF6FB"/>
+    </linearGradient>
+    <linearGradient id="sareeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#088740"/>
+      <stop offset="100%" stop-color="#066B32"/>
+    </linearGradient>
+  </defs>
+  <rect width="280" height="280" rx="140" fill="url(#dirBg3)"/>
+  <circle cx="140" cy="140" r="136" fill="none" stroke="#E5C77D" stroke-width="2.5"/>
+  
+  <!-- Female Corporate / Professional Portrait Silhouette -->
+  <!-- Long Hair Behind -->
+  <path d="M88 120 C84 75 100 48 140 48 C180 48 196 75 192 120 C194 150 190 185 186 210 C182 170 178 140 174 125 C168 85 112 85 106 125 C102 140 98 170 94 210 C90 185 86 150 88 120 Z" fill="#18201D"/>
+  <!-- Face -->
+  <path d="M110 95 C110 80 122 72 140 72 C158 72 170 80 170 95 C170 128 158 146 140 146 C122 146 110 128 110 95 Z" fill="#F8CBA3"/>
+  <!-- Hair Front Bangs -->
+  <path d="M102 92 C108 72 124 64 140 64 C156 64 172 72 178 92 C168 80 152 74 140 74 C128 74 112 80 102 92 Z" fill="#18201D"/>
+  <circle cx="140" cy="98" r="2.5" fill="#D2A037"/>
+  <!-- Earrings (Gold) -->
+  <circle cx="106" cy="115" r="3.5" fill="#D2A037"/>
+  <circle cx="174" cy="115" r="3.5" fill="#D2A037"/>
+  <rect x="132" y="140" width="16" height="25" fill="#EBBA91"/>
+  <!-- Attire / Saree with Gold Border Accent -->
+  <path d="M78 270 C78 210 96 175 125 168 L140 205 L155 168 C184 175 202 210 202 270 Z" fill="url(#sareeGrad)"/>
+  <path d="M115 168 Q140 195 165 270" stroke="#E5C77D" stroke-width="3" fill="none"/>
+</svg>

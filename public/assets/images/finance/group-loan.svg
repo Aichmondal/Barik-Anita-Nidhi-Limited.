@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="100%" height="100%">
+  <defs>
+    <linearGradient id="glLightBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="70%" stop-color="#F7FBFD"/>
+      <stop offset="100%" stop-color="#EAF6FB"/>
+    </linearGradient>
+    <radialGradient id="glSkyGlow" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#CBE7F5" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="glGreenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#088740"/>
+      <stop offset="100%" stop-color="#066B32"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="400" height="250" rx="14" fill="url(#glLightBg)" stroke="#DCECEF" stroke-width="1.2"/>
+  <circle cx="200" cy="115" r="95" fill="url(#glSkyGlow)"/>
+  <circle cx="200" cy="115" r="85" fill="none" stroke="#DCECEF" stroke-width="1" stroke-dasharray="4 6"/>
+  <circle cx="200" cy="115" r="60" fill="none" stroke="#E5C77D" stroke-opacity="0.4" stroke-width="1.2"/>
+  
+  <!-- Group of 3 Members Supporting Each Other -->
+  <g transform="translate(130, 48)">
+    <!-- Member Left -->
+    <circle cx="35" cy="40" r="16" fill="#CBE7F5"/>
+    <path d="M15 105 C15 78 24 68 45 68 C64 68 70 78 70 105 Z" fill="#EAF6FB" stroke="#DCECEF" stroke-width="1.5"/>
+    
+    <!-- Member Right -->
+    <circle cx="105" cy="40" r="16" fill="#FBF3DF"/>
+    <path d="M75 105 C75 78 82 68 105 68 C126 68 135 78 135 105 Z" fill="#FBF3DF" stroke="#E5C77D" stroke-width="1.5"/>
+    
+    <!-- Center Leader Member -->
+    <circle cx="70" cy="28" r="20" fill="#E8F6EE" stroke="#088740" stroke-width="2"/>
+    <path d="M42 112 C42 80 52 62 70 62 C88 62 98 80 98 112 Z" fill="url(#glGreenGrad)"/>
+    
+    <!-- Connected Golden Support Arch -->
+    <path d="M26 88 Q70 106 114 88" stroke="#D2A037" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <circle cx="70" cy="97" r="4" fill="#D2A037"/>
+  </g>
+
+  <!-- Frequency Tag: Yearly 3 Times Loan -->
+  <g transform="translate(115, 192)">
+    <rect width="170" height="34" rx="17" fill="#FFFFFF" stroke="#E5C77D" stroke-width="1.2"/>
+    <circle cx="18" cy="17" r="5" fill="#D2A037"/>
+    <text x="32" y="21" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#18201D">Yearly 3 Times Loan</text>
+  </g>
+</svg>

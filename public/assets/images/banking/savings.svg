@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="100%" height="100%">
+  <circle cx="60" cy="60" r="56" fill="#F0FDF4" stroke="#20A65A" stroke-width="2"/>
+  <!-- Classic Savings Piggy Bank & Coin -->
+  <!-- Coin Dropping -->
+  <circle cx="60" cy="28" r="9" fill="#F59E0B" stroke="#D97706" stroke-width="1.5"/>
+  <text x="60" y="32" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="#FFFFFF" text-anchor="middle">₹</text>
+  <!-- Piggy Silhouette -->
+  <path d="M42 45 C30 48 24 60 28 72 C32 82 42 86 52 86 L52 92 L62 92 L62 86 L74 86 L74 92 L84 92 L84 84 C92 78 96 68 94 58 C90 48 78 44 68 44 C60 44 48 44 42 45 Z" fill="#20A65A"/>
+  <!-- Snout & Ear -->
+  <circle cx="28" cy="64" r="5" fill="#166534"/>
+  <path d="M40 46 L45 36 L52 44 Z" fill="#166534"/>
+  <!-- Slot -->
+  <rect x="54" y="44" width="16" height="3" rx="1.5" fill="#FFFFFF"/>
+</svg>

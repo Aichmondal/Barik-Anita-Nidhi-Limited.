@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <!-- Outer Gold Laurel Seal -->
+  <circle cx="50" cy="50" r="46" fill="#FFFFFF" stroke="#D2A037" stroke-width="2.5"/>
+  <circle cx="50" cy="50" r="40" fill="none" stroke="#DCECEF" stroke-width="1.2" stroke-dasharray="3 3"/>
+  <circle cx="50" cy="50" r="35" fill="#E8F6EE" stroke="#088740" stroke-width="1.5"/>
+  <!-- Center Verified Symbol -->
+  <circle cx="50" cy="50" r="20" fill="#088740"/>
+  <path d="M42 50 L47 55 L58 43" stroke="#FFFFFF" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Gold Compass Stars -->
+  <circle cx="50" cy="18" r="2.2" fill="#D2A037"/>
+  <circle cx="50" cy="82" r="2.2" fill="#D2A037"/>
+  <circle cx="18" cy="50" r="2.2" fill="#D2A037"/>
+  <circle cx="82" cy="50" r="2.2" fill="#D2A037"/>
+</svg>

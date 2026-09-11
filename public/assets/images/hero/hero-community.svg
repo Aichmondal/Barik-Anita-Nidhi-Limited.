@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- Soft Light Luxury Gradients -->
+    <linearGradient id="heroCardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="70%" stop-color="#F7FBFD"/>
+      <stop offset="100%" stop-color="#EAF6FB"/>
+    </linearGradient>
+
+    <radialGradient id="skyAtmosphere" cx="65%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#CBE7F5" stop-opacity="0.6"/>
+      <stop offset="60%" stop-color="#EAF6FB" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="brandGreenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#088740"/>
+      <stop offset="100%" stop-color="#066B32"/>
+    </linearGradient>
+
+    <linearGradient id="champagneGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBF3DF"/>
+      <stop offset="40%" stop-color="#D2A037"/>
+      <stop offset="100%" stop-color="#B88420"/>
+    </linearGradient>
+
+    <linearGradient id="softBorderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#DCECEF"/>
+      <stop offset="100%" stop-color="#E5C77D"/>
+    </linearGradient>
+
+    <filter id="softCardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#18201D" flood-opacity="0.06"/>
+    </filter>
+  </defs>
+
+  <!-- Clean White / Light Sky Canvas -->
+  <rect width="800" height="600" rx="20" fill="url(#heroCardBg)" stroke="#DCECEF" stroke-width="1.5"/>
+
+  <!-- Atmospheric Sky Blue Glow -->
+  <circle cx="560" cy="220" r="280" fill="url(#skyAtmosphere)"/>
+  
+  <!-- Subtle Architectural Rings & Grid -->
+  <circle cx="400" cy="300" r="240" fill="none" stroke="#DCECEF" stroke-width="1" stroke-dasharray="4 8"/>
+  <circle cx="400" cy="300" r="180" fill="none" stroke="#E5C77D" stroke-opacity="0.3" stroke-width="1"/>
+  <circle cx="400" cy="300" r="120" fill="none" stroke="#CBE7F5" stroke-width="1.5"/>
+
+  <!-- Central Crest: BARIK ANITA NIDHI Institutional Emblem -->
+  <g transform="translate(250, 80)" filter="url(#softCardShadow)">
+    <!-- Base Circular Emblem in Pure White with Gold Trim -->
+    <circle cx="150" cy="140" r="120" fill="#FFFFFF" stroke="url(#champagneGoldGrad)" stroke-width="2.5"/>
+    <circle cx="150" cy="140" r="110" fill="none" stroke="#DCECEF" stroke-width="1"/>
+
+    <!-- Subtle Sky Blue Inner Glow -->
+    <circle cx="150" cy="140" r="102" fill="#EAF6FB" fill-opacity="0.5"/>
+
+    <!-- Prosperity Shield (Deep Brand Green) -->
+    <path d="M150 55 L215 88 V145 C215 185 190 215 150 228 C110 215 85 185 85 145 V88 Z" fill="url(#brandGreenGrad)" stroke="#E5C77D" stroke-width="2"/>
+
+    <!-- Inner Financial Spire / Sprouting Tree in Pure White & Champagne Gold -->
+    <path d="M150 90 C150 90 125 120 135 155 C140 168 150 176 150 176 C150 176 160 168 165 155 C175 120 150 90 150 90 Z" fill="#FFFFFF"/>
+    <path d="M150 102 V168" stroke="#D2A037" stroke-width="2.5" stroke-linecap="round"/>
+    
+    <!-- Central Golden Bud / Seed of Prosperity -->
+    <circle cx="150" cy="84" r="5" fill="url(#champagneGoldGrad)"/>
+    
+    <!-- Laurel of Community (Subtle Gold Arc) -->
+    <path d="M115 170 C125 188 137 195 150 198 C163 195 175 188 185 170" fill="none" stroke="#E5C77D" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Left Floating Metric Card: Government Approved Status -->
+  <g transform="translate(60, 360)" filter="url(#softCardShadow)">
+    <rect width="220" height="96" rx="14" fill="#FFFFFF" stroke="#DCECEF" stroke-width="1.2"/>
+    <rect x="0" y="0" width="6" height="96" rx="3" fill="#088740"/>
+    
+    <circle cx="44" cy="48" r="20" fill="#E8F6EE"/>
+    <path d="M44 38 L51 42 V50 C51 55 47 58 44 60 C41 58 37 55 37 50 V42 Z" fill="none" stroke="#088740" stroke-width="1.8" stroke-linejoin="round"/>
+    <path d="M41 49 L43 51 L47 46" stroke="#088740" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <text x="76" y="42" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#7A8781" letter-spacing="0.5">STATUS</text>
+    <text x="76" y="60" font-family="Inter, sans-serif" font-size="13" font-weight="800" fill="#18201D">Govt. Approved</text>
+    <text x="76" y="76" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#52615A">MCA Incorporated</text>
+  </g>
+
+  <!-- Right Floating Metric Card: CIN & Transparency -->
+  <g transform="translate(520, 370)" filter="url(#softCardShadow)">
+    <rect width="230" height="96" rx="14" fill="#FFFFFF" stroke="#DCECEF" stroke-width="1.2"/>
+    <rect x="0" y="0" width="6" height="96" rx="3" fill="#D2A037"/>
+
+    <circle cx="44" cy="48" r="20" fill="#FBF3DF"/>
+    <!-- Award / Ribbon Icon -->
+    <circle cx="44" cy="44" r="8" fill="none" stroke="#B88420" stroke-width="1.8"/>
+    <path d="M40 50 L38 58 L44 55 L50 58 L48 50" fill="none" stroke="#B88420" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <text x="76" y="42" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#7A8781" letter-spacing="0.5">VERIFIED REGISTRATION</text>
+    <text x="76" y="59" font-family="Inter, sans-serif" font-size="12" font-weight="800" fill="#18201D">CIN: U65990WB2022</text>
+    <text x="76" y="75" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#D2A037">ROC Kolkata Verified</text>
+  </g>
+
+  <!-- Subtle Financial Growth Wave (Deep Green + Champagne Gold Line) -->
+  <path d="M120 520 C240 470 320 540 440 480 C540 430 660 490 740 440" fill="none" stroke="#CBE7F5" stroke-width="2" stroke-dasharray="3 6"/>
+  <path d="M140 510 C260 460 340 525 450 470 C550 420 650 470 720 425" fill="none" stroke="#088740" stroke-width="2.5" stroke-linecap="round"/>
+  
+  <circle cx="450" cy="470" r="5" fill="#FFFFFF" stroke="#088740" stroke-width="2"/>
+  <circle cx="720" cy="425" r="6" fill="#D2A037" stroke="#FFFFFF" stroke-width="2"/>
+</svg>

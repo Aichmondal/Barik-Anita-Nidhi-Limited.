@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="goldLightBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="60%" stop-color="#F7FBFD"/>
+      <stop offset="100%" stop-color="#EAF6FB"/>
+    </linearGradient>
+
+    <radialGradient id="champagneAtmosphere" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#FBF3DF" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#CBE7F5" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="luxuryGoldBar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#B88420"/>
+      <stop offset="35%" stop-color="#FBF3DF"/>
+      <stop offset="65%" stop-color="#D2A037"/>
+      <stop offset="100%" stop-color="#9A6E18"/>
+    </linearGradient>
+
+    <linearGradient id="goldTopFace" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="60%" stop-color="#FBF3DF"/>
+      <stop offset="100%" stop-color="#D2A037"/>
+    </linearGradient>
+
+    <linearGradient id="greenTrustGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#088740"/>
+      <stop offset="100%" stop-color="#066B32"/>
+    </linearGradient>
+
+    <filter id="goldDropShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#18201D" flood-opacity="0.07"/>
+    </filter>
+  </defs>
+
+  <!-- Clean Canvas -->
+  <rect width="600" height="450" rx="18" fill="url(#goldLightBg)" stroke="#DCECEF" stroke-width="1.5"/>
+
+  <!-- Soft Champagne & Sky Ambiance -->
+  <circle cx="300" cy="225" r="190" fill="url(#champagneAtmosphere)"/>
+
+  <!-- Geometric Concentric Circles -->
+  <circle cx="300" cy="225" r="160" fill="none" stroke="#DCECEF" stroke-width="1" stroke-dasharray="6 8"/>
+  <circle cx="300" cy="225" r="125" fill="none" stroke="#E5C77D" stroke-opacity="0.4" stroke-width="1.2"/>
+
+  <!-- Pedestal / Presentation Base -->
+  <ellipse cx="300" cy="330" rx="180" ry="32" fill="#EAF6FB" stroke="#DCECEF" stroke-width="1.2"/>
+  <ellipse cx="300" cy="326" rx="140" ry="24" fill="#FFFFFF" stroke="#E5C77D" stroke-width="1.5"/>
+
+  <!-- Vault Safety Shield & Crest in Background -->
+  <g transform="translate(230, 80)" filter="url(#goldDropShadow)">
+    <circle cx="70" cy="70" r="62" fill="#FFFFFF" stroke="#DCECEF" stroke-width="2"/>
+    <circle cx="70" cy="70" r="54" fill="none" stroke="#E5C77D" stroke-width="1.5" stroke-dasharray="4 4"/>
+    
+    <!-- Vault Wheel Spoke -->
+    <circle cx="70" cy="70" r="28" fill="#E8F6EE" stroke="#088740" stroke-width="2"/>
+    <path d="M70 42 V98 M42 70 H98" stroke="#088740" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="70" cy="70" r="10" fill="#D2A037"/>
+  </g>
+
+  <!-- Certified Gold Bars on Pedestal -->
+  <!-- Bar 1 (Left Back) -->
+  <g transform="translate(160, 240)" filter="url(#goldDropShadow)">
+    <!-- Top Face -->
+    <polygon points="18,0 110,0 92,20 0,20" fill="url(#goldTopFace)"/>
+    <!-- Front Face -->
+    <polygon points="0,20 92,20 82,46 -10,46" fill="url(#luxuryGoldBar)"/>
+    <!-- Right Face -->
+    <polygon points="92,20 110,0 100,26 82,46" fill="#B88420"/>
+    <text x="38" y="35" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#18201D" letter-spacing="0.5">999.9 PURE</text>
+  </g>
+
+  <!-- Bar 2 (Right Front) -->
+  <g transform="translate(260, 260)" filter="url(#goldDropShadow)">
+    <!-- Top Face -->
+    <polygon points="20,0 120,0 100,22 0,22" fill="url(#goldTopFace)"/>
+    <!-- Front Face -->
+    <polygon points="0,22 100,22 90,50 -10,50" fill="url(#luxuryGoldBar)"/>
+    <!-- Right Face -->
+    <polygon points="100,22 120,0 110,28 90,50" fill="#B88420"/>
+    <text x="44" y="38" font-family="Inter, sans-serif" font-size="10" font-weight="800" fill="#18201D" letter-spacing="0.5">FINE GOLD</text>
+  </g>
+
+  <!-- Floating Certificate / Hallmarked Badge -->
+  <g transform="translate(80, 150)" filter="url(#goldDropShadow)">
+    <rect width="130" height="60" rx="10" fill="#FFFFFF" stroke="#E5C77D" stroke-width="1.2"/>
+    <circle cx="28" cy="30" r="12" fill="#FBF3DF"/>
+    <path d="M24 30 L27 33 L33 27" stroke="#D2A037" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="48" y="27" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#7A8781" letter-spacing="0.5">PURITY</text>
+    <text x="48" y="42" font-family="Inter, sans-serif" font-size="11" font-weight="800" fill="#088740">100% Tested</text>
+  </g>
+
+  <!-- Floating Secure Vault Tag -->
+  <g transform="translate(390, 160)" filter="url(#goldDropShadow)">
+    <rect width="140" height="60" rx="10" fill="#FFFFFF" stroke="#DCECEF" stroke-width="1.2"/>
+    <circle cx="28" cy="30" r="12" fill="#E8F6EE"/>
+    <path d="M28 22 L34 25 V31 C34 35 31 37 28 39 C25 37 22 35 22 31 V25 Z" fill="none" stroke="#088740" stroke-width="1.6"/>
+    <text x="48" y="27" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#7A8781" letter-spacing="0.5">VAULT CUSTODY</text>
+    <text x="48" y="42" font-family="Inter, sans-serif" font-size="11" font-weight="800" fill="#18201D">24/7 Insured</text>
+  </g>
+</svg>
