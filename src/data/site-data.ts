@@ -60,7 +60,6 @@ export interface ContactInfo {
   phoneDisplay: string;
   email: string;
   whatsappUrl: string;
-  facebookUrl: string;
   mapsUrl: string;
   businessHours: string;
 }
@@ -118,7 +117,7 @@ export const siteData: SiteData = {
   company: {
     name: 'BARIK ANITA NIDHI LIMITED',
     bengaliName: 'বারিক অনিতা নিধি লিমিটেড',
-    tagline: 'Growing Together, Prospering Together',
+    tagline: 'Self-Confidence • Progress • Success',
     bengaliTagline: 'একসাথে বৃদ্ধি, একসাথে সমৃদ্ধি',
     logoUrl: 'https://res.cloudinary.com/qfyvlsqf/image/upload/f_auto,q_auto/LOGO_1',
     established: '6th April, 2022',
@@ -131,12 +130,12 @@ export const siteData: SiteData = {
   },
   navigation: [
     { id: 'nav-home', label: 'Home', href: '#home' },
-    { id: 'nav-about', label: 'About', href: '#company' },
     { id: 'nav-services', label: 'Services', href: '#finance-services' },
     { id: 'nav-banking', label: 'Banking', href: '#banking-services' },
     { id: 'nav-gold-loan', label: 'Gold Loan', href: '#gold-loan' },
     { id: 'nav-directors', label: 'Directors', href: '#directors' },
-    { id: 'nav-contact', label: 'Contact', href: '#contact' }
+    { id: 'nav-contact', label: 'Contact', href: '#contact' },
+    { id: 'nav-about', label: 'About', href: '#company' }
   ],
   hero: {
     mainHeading: 'Empowering Communities',
@@ -187,7 +186,7 @@ export const siteData: SiteData = {
       frequency: 'Yearly 3 Times Loan',
       description: 'Specialized financial assistance fostering peer-support and collective community enterprise through flexible group credit.',
       features: ['Yearly 3 Cycles', 'No Complex Collateral', 'Doorstep Facilitation'],
-      image: '/assets/images/finance/group-loan.svg',
+      image: 'https://res.cloudinary.com/qfyvlsqf/image/upload/v1789205453/ChatGPT_Image_Jun_19_2026_05_20_46_PM.png',
       icon: 'users'
     },
     {
@@ -196,7 +195,7 @@ export const siteData: SiteData = {
       frequency: 'Yearly 4 Times Loan',
       description: 'Working capital and inventory support tailored for local grocery owners, artisans, retail merchants and micro-entrepreneurs.',
       features: ['Yearly 4 Cycles', 'Fast Verification', 'Growth Support'],
-      image: '/assets/images/finance/micro-business.svg',
+      image: 'https://res.cloudinary.com/qfyvlsqf/image/upload/v1789205745/ChatGPT_Image_Jun_19_2026_05_18_11_PM.png',
       icon: 'briefcase'
     },
     {
@@ -205,7 +204,7 @@ export const siteData: SiteData = {
       frequency: 'Yearly 4 Times Loan',
       description: 'Hassle-free financing for productive home goods, electrical equipment, and essential tools that improve quality of life.',
       features: ['Yearly 4 Cycles', 'Flexible Terms', 'Affordable Repayments'],
-      image: '/assets/images/finance/product-loan.svg',
+      image: 'https://res.cloudinary.com/qfyvlsqf/image/upload/v1789205647/Vechicle_Loan_2.jpg',
       icon: 'package'
     }
   ],
@@ -255,7 +254,7 @@ export const siteData: SiteData = {
       { title: 'Transparent Terms', desc: 'Zero hidden charges and member-friendly flexible repayments.' },
       { title: 'Minimal Paperwork', desc: 'Quick KYC approval to disburse funds in minutes.' }
     ],
-    image: '/assets/images/gold-loan/gold-loan-feature.svg'
+    image: 'https://res.cloudinary.com/qfyvlsqf/image/upload/v1789205316/396b2221bd3a93f777de7e5efa22cfb4.jpg'
   },
   directorsHeader: {
     heading: 'Our Keynote 2025 Members',
@@ -268,7 +267,7 @@ export const siteData: SiteData = {
       name: 'SUBHANKAR DAS',
       role: 'Director',
       appointmentDate: '1st February, 2025',
-      image: '/assets/images/directors/director-subhankar-das.svg',
+      image: 'https://res.cloudinary.com/qfyvlsqf/image/upload/v1789201623/d7367f78-90c2-48d6-b826-2880fffb5677.png',
       initials: 'SD'
     },
     {
@@ -276,7 +275,7 @@ export const siteData: SiteData = {
       name: 'RAJIB DAGA',
       role: 'Director',
       appointmentDate: '1st February, 2025',
-      image: '/assets/images/directors/director-rajib-daga.svg',
+      image: 'https://res.cloudinary.com/qfyvlsqf/image/upload/v1789201732/906d7bc5-bc18-4fe4-99ff-2d218cb38783.png',
       initials: 'RD'
     },
     {
@@ -284,7 +283,7 @@ export const siteData: SiteData = {
       name: 'PAPIYA HALDAR',
       role: 'Director',
       appointmentDate: '1st February, 2025',
-      image: '/assets/images/directors/director-papiya-haldar.svg',
+      image: 'https://res.cloudinary.com/qfyvlsqf/image/upload/v1789201793/ChatGPT_Image_Jun_19_2026_10_05_13_PM.png',
       initials: 'PH'
     }
   ],
@@ -303,8 +302,7 @@ export const siteData: SiteData = {
     phoneDisplay: '+91 963-522-4678',
     email: 'office.barikanitanidhiltd@gmail.com',
     whatsappUrl: 'https://wa.me/919635224678?text=Hello%20Barik%20Anita%20Nidhi%20Limited,%20I%20would%20like%20to%20enquire%20about%20your%20services.',
-    facebookUrl: 'https://www.facebook.com/search/top?q=BARIK%20ANITA%20NIDHI%20LIMITED',
-    mapsUrl: 'https://maps.google.com/?q=Kachupukur,+Bulbulchandi,+Malda,+West+Bengal+732122',
+    mapsUrl: 'https://www.google.com/maps?q=24.9830034,88.2457168&z=17&hl=en',
     businessHours: 'Monday to Saturday: 10:00 AM – 5:00 PM (Closed on Sundays & Bank Holidays)'
   },
   footer: {

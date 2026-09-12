@@ -86,7 +86,7 @@ export function renderFinanceServices(): string {
     .join('');
 
   return `
-  <section id="finance-services" class="section-padding bg-main" aria-labelledby="finance-heading">
+  <section id="finance-services" class="section-padding bg-services-yellow" aria-labelledby="finance-heading">
     <div class="container">
       <div class="section-header text-center reveal-on-scroll">
         <div class="section-eyebrow-wrap">

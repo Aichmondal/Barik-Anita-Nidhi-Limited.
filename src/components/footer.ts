@@ -72,8 +72,10 @@ export function renderFooter(): string {
         <div class="footer-col footer-contact-col">
           <h4 class="footer-col-title">Contact &amp; Helpdesk</h4>
           <address class="footer-address">
-            ${contact.headOffice.line1}, ${contact.headOffice.line2},<br>
-            ${contact.headOffice.city}, ${contact.headOffice.state}, India - ${contact.headOffice.pincode}
+            <a href="${contact.mapsUrl}" target="_blank" rel="noopener noreferrer" class="footer-address-link" title="Open Office Location on Google Maps">
+              ${contact.headOffice.line1}, ${contact.headOffice.line2},<br>
+              ${contact.headOffice.city}, ${contact.headOffice.state}, India - ${contact.headOffice.pincode}
+            </a>
           </address>
           <div class="footer-contact-links">
             <a href="tel:${contact.phone}" class="footer-contact-item">
@@ -96,11 +98,6 @@ export function renderFooter(): string {
             <a href="${contact.whatsappUrl}" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="WhatsApp">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-              </svg>
-            </a>
-            <a href="${contact.facebookUrl}" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Facebook">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
               </svg>
             </a>
             <a href="${contact.mapsUrl}" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Google Maps Location">

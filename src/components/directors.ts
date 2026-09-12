@@ -43,7 +43,7 @@ export function renderDirectors(): string {
     .join('');
 
   return `
-  <section id="directors" class="section-padding bg-sky" aria-labelledby="directors-heading">
+  <section id="directors" class="section-padding bg-white" aria-labelledby="directors-heading">
     <div class="container">
       <div class="section-header text-center reveal-on-scroll">
         <div class="section-eyebrow-wrap">

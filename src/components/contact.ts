@@ -4,7 +4,7 @@ export function renderContact(): string {
   const { contact } = siteData;
 
   return `
-  <section id="contact" class="section-padding bg-main" aria-labelledby="contact-heading">
+  <section id="contact" class="section-padding bg-white" aria-labelledby="contact-heading">
     <div class="container">
       <div class="section-header text-center reveal-on-scroll">
         <div class="section-eyebrow-wrap">
@@ -38,10 +38,12 @@ export function renderContact(): string {
               <div class="contact-detail-col">
                 <span class="contact-label-tag">Address</span>
                 <address class="contact-address-text">
-                  ${contact.headOffice.line1},<br>
-                  ${contact.headOffice.line2},<br>
-                  ${contact.headOffice.city}, ${contact.headOffice.state},<br>
-                  ${contact.headOffice.country} - ${contact.headOffice.pincode}
+                  <a href="${contact.mapsUrl}" target="_blank" rel="noopener noreferrer" class="contact-address-link" title="Open in Google Maps">
+                    ${contact.headOffice.line1},<br>
+                    ${contact.headOffice.line2},<br>
+                    ${contact.headOffice.city}, ${contact.headOffice.state},<br>
+                    ${contact.headOffice.country} - ${contact.headOffice.pincode}
+                  </a>
                 </address>
               </div>
             </div>
@@ -94,7 +96,7 @@ export function renderContact(): string {
             </div>
           </div>
 
-          <!-- Quick Connect Buttons (WhatsApp, Google Maps, Facebook) -->
+          <!-- Quick Connect Buttons (WhatsApp, Google Maps) -->
           <div class="contact-channels-wrapper">
             <h4 class="channels-heading">Direct Connect Channels</h4>
             <div class="channels-btn-grid">
@@ -128,21 +130,6 @@ export function renderContact(): string {
                   <line x1="16" y1="6" x2="16" y2="22"></line>
                 </svg>
                 <span>Locate Map</span>
-              </a>
-
-              <!-- Facebook Button -->
-              <a 
-                href="${contact.facebookUrl}" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                class="btn-channel-item channel-facebook" 
-                id="btn-facebook"
-                aria-label="Visit official Facebook Page"
-              >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                </svg>
-                <span>Facebook</span>
               </a>
             </div>
           </div>

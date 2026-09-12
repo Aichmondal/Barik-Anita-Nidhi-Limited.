@@ -21,7 +21,7 @@ export function renderGoldLoan(): string {
     .join('');
 
   return `
-  <section id="gold-loan" class="section-padding bg-main" aria-labelledby="gold-loan-heading">
+  <section id="gold-loan" class="section-padding bg-white" aria-labelledby="gold-loan-heading">
     <div class="container">
       <div class="gold-luxury-container reveal-on-scroll">
         <!-- Soft Atmospheric Glow -->

@@ -14,6 +14,7 @@ import { renderContact } from './components/contact';
 import { renderFooter } from './components/footer';
 import { renderMobileBar } from './components/mobile-bar';
 import { setupNavigation } from './utils/navigation';
+import { setup3dScrollEffects } from './utils/scroll-3d';
 
 function initApp(): void {
   const appRoot = document.getElementById('app');
@@ -28,12 +29,12 @@ function initApp(): void {
     ${renderHeader()}
     <main id="main-content" role="main">
       ${renderHero()}
-      ${renderCompanySection()}
       ${renderFinanceServices()}
       ${renderBankingServices()}
       ${renderGoldLoan()}
       ${renderDirectors()}
       ${renderContact()}
+      ${renderCompanySection()}
     </main>
     ${renderFooter()}
     ${renderMobileBar()}
@@ -41,6 +42,7 @@ function initApp(): void {
 
   // Initialize interactive behaviors, smooth scrolling, and scroll reveals
   setupNavigation();
+  setup3dScrollEffects();
 }
 
 // Boot application when DOM is ready
