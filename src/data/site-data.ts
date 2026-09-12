@@ -120,7 +120,7 @@ export const siteData: SiteData = {
     bengaliName: 'বারিক অনিতা নিধি লিমিটেড',
     tagline: 'Growing Together, Prospering Together',
     bengaliTagline: 'একসাথে বৃদ্ধি, একসাথে সমৃদ্ধি',
-    logoUrl: '/logo.png',
+    logoUrl: 'https://res.cloudinary.com/qfyvlsqf/image/upload/f_auto,q_auto/LOGO_1',
     established: '6th April, 2022',
     status: 'Approved by Indian Government',
     cin: 'U65990WB2022PLN252823',

@@ -33,10 +33,10 @@ export function renderHeader(): string {
     <div class="header-container">
       <!-- Brand / Logo Area -->
       <div class="brand-container" id="header-brand">
-        <a href="/" class="brand-logo-link" aria-label="Atal Production House home">
+        <a href="/" class="brand-logo-link" aria-label="${company.name}">
           <img
-            src="/logo.png"
-            alt="Atal Production House logo"
+            src="https://res.cloudinary.com/qfyvlsqf/image/upload/f_auto,q_auto/LOGO_1"
+            alt="${company.name} logo"
             class="brand-logo"
             width="64"
             height="64"

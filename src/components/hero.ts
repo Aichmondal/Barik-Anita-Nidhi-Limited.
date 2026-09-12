@@ -9,20 +9,6 @@ export function renderHero(): string {
       <div class="hero-grid">
         <!-- Left Hero Content -->
         <div class="hero-text-col reveal-on-scroll">
-          <!-- Official Brand Hero Logo Emblem (100–140px) -->
-          <div class="hero-brand-logo-container">
-            <a href="/" class="hero-logo-link" aria-label="Atal Production House home">
-              <img
-                src="/logo.png"
-                alt="Atal Production House logo"
-                class="hero-brand-logo"
-                width="120"
-                height="120"
-                loading="eager"
-              />
-            </a>
-          </div>
-
           <!-- Main Headline with Highlighted Brand Green Word -->
           <h1 class="hero-main-title">
             Empowering <span class="hero-highlight-word">Communities</span>,
@@ -58,7 +44,7 @@ export function renderHero(): string {
         <div class="hero-visual-col reveal-on-scroll" style="--reveal-delay: 150ms;">
           <div class="hero-visual-card">
             <img 
-              src="/assets/images/hero/hero-community.svg" 
+              src="https://res.cloudinary.com/qfyvlsqf/image/upload/v1789199057/d3b77862-24c7-4696-a23e-8549b2cd7c8c.png" 
               alt="BARIK ANITA NIDHI LIMITED - Community Financial Growth and Trust" 
               class="hero-showcase-img"
               loading="eager"
