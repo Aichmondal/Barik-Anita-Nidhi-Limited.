@@ -6,7 +6,7 @@ export function setupNavigation(): void {
   const header = document.querySelector<HTMLElement>('#site-header');
   const menuToggle = document.querySelector<HTMLButtonElement>('#mobile-menu-toggle');
   const mobileMenu = document.querySelector<HTMLElement>('#mobile-menu');
-  const navLinks = document.querySelectorAll<HTMLAnchorElement>('.nav-link, .mobile-nav-link, .mobile-bar-action[href^="#"], .header-cta-btn, .mobile-cta-link');
+  const navLinks = document.querySelectorAll<HTMLAnchorElement>('.nav-link, .mobile-nav-link, .mobile-bar-action[href^="#"], .header-cta-btn, .mobile-cta-link, .footer-nav-link');
 
   // 1. Scroll-sensitive header compacting
   const handleScroll = (): void => {
@@ -65,16 +65,16 @@ export function setupNavigation(): void {
     });
   }
 
-  // 3. Smooth scrolling for internal anchor links
+  // 3. Smooth scrolling for internal anchor links on same page
   navLinks.forEach((link) => {
     link.addEventListener('click', (e) => {
       const href = link.getAttribute('href');
       if (href && href.startsWith('#')) {
-        e.preventDefault();
         const targetId = href.substring(1);
         const targetElement = document.getElementById(targetId);
 
         if (targetElement) {
+          e.preventDefault();
           // Close mobile menu if open
           if (mobileMenu?.classList.contains('menu-open') && menuToggle) {
             mobileMenu.classList.remove('menu-open');

@@ -1,20 +1,13 @@
 /**
  * BARIK ANITA NIDHI LIMITED - Corporate Website Application
- * Production-ready Vanilla TypeScript Architecture
+ * Production-ready Vanilla TypeScript Architecture with Multi-Page Routing
  */
 import './style.css';
 import { renderHeader } from './components/header';
-import { renderHero } from './components/hero';
-import { renderCompanySection } from './components/company';
-import { renderFinanceServices } from './components/finance-services';
-import { renderBankingServices } from './components/banking-services';
-import { renderGoldLoan } from './components/gold-loan';
-import { renderDirectors } from './components/directors';
-import { renderContact } from './components/contact';
 import { renderFooter } from './components/footer';
 import { renderMobileBar } from './components/mobile-bar';
 import { setupNavigation } from './utils/navigation';
-import { setup3dScrollEffects } from './utils/scroll-3d';
+import { setupRouter } from './utils/router';
 
 function initApp(): void {
   const appRoot = document.getElementById('app');
@@ -23,26 +16,20 @@ function initApp(): void {
     return;
   }
 
-  // Assemble semantic HTML structure
+  // Assemble persistent semantic HTML layout structure
   appRoot.innerHTML = `
     <a href="#main-content" class="skip-link">Skip to main content</a>
     ${renderHeader()}
-    <main id="main-content" role="main">
-      ${renderHero()}
-      ${renderFinanceServices()}
-      ${renderBankingServices()}
-      ${renderGoldLoan()}
-      ${renderDirectors()}
-      ${renderContact()}
-      ${renderCompanySection()}
-    </main>
+    <main id="main-content" role="main"></main>
     ${renderFooter()}
     ${renderMobileBar()}
   `;
 
-  // Initialize interactive behaviors, smooth scrolling, and scroll reveals
+  // Initialize interactive navigation behaviors and mobile drawer
   setupNavigation();
-  setup3dScrollEffects();
+
+  // Initialize multi-page routing (/ for Home, /our-projects for Projects, /our-projects/riverview-homestay for Property Detail)
+  setupRouter();
 }
 
 // Boot application when DOM is ready

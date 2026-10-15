@@ -65,6 +65,8 @@ export function renderFooter(): string {
             <li><a href="#banking-services" class="footer-nav-link">Fixed Deposit (FD)</a></li>
             <li><a href="#banking-services" class="footer-nav-link">Monthly Income Scheme (MIS)</a></li>
             <li><a href="#gold-loan" class="footer-nav-link">Gold Loan (Upcoming)</a></li>
+            <li><a href="/our-projects/riverview-homestay" class="footer-nav-link" data-route="/our-projects/riverview-homestay">Riverview Homestay, Darjeeling</a></li>
+            <li><a href="/our-projects/hotel-newa-gangtok" class="footer-nav-link" data-route="/our-projects/hotel-newa-gangtok">Hotel Newa (Gangtok, Sikkim)</a></li>
           </ul>
         </div>
 

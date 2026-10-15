@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <linearGradient id="grad-room-triple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#155e75" />
+      <stop offset="100%" stop-color="#0891b2" />
+    </linearGradient>
+    <pattern id="pat-room-triple" width="40" height="40" patternUnits="userSpaceOnUse">
+      <rect width="40" height="40" fill="none" />
+      <circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.08)" />
+    </pattern>
+  </defs>
+  <rect width="1200" height="800" fill="url(#grad-room-triple)" />
+  <rect width="1200" height="800" fill="url(#pat-room-triple)" />
+  
+  <g transform="translate(600, 320)" text-anchor="middle">
+    <circle cx="0" cy="0" r="54" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.4)" stroke-width="2" />
+    <path d="M-20,-12 L20,-12 L14,-24 L-14,-24 Z M-24,-8 L24,-8 L24,18 L-24,18 Z" fill="none" stroke="#ffffff" stroke-width="3" stroke-linejoin="round" />
+    <circle cx="0" cy="5" r="8" fill="none" stroke="#ffffff" stroke-width="3" />
+    
+    <text y="90" font-family="'Inter', system-ui, sans-serif" font-size="34" font-weight="800" fill="#ffffff" letter-spacing="-0.02em">Cozy Family Room with Three Beds</text>
+    <text y="135" font-family="'Inter', system-ui, sans-serif" font-size="20" font-weight="500" fill="rgba(255,255,255,0.85)">Comfortable Triple Bed Setup with Framed Alpine Art</text>
+    
+    <rect x="-160" y="165" width="320" height="36" rx="18" fill="rgba(0,0,0,0.3)" stroke="rgba(255,255,255,0.25)" stroke-width="1" />
+    <text y="189" font-family="'Inter', system-ui, sans-serif" font-size="14" font-weight="700" fill="#fde047" letter-spacing="0.05em">HOTEL NEWA, GANGTOK • MG MARKET</text>
+  </g>
+  
+  <rect x="40" y="720" width="1120" height="44" rx="8" fill="rgba(0,0,0,0.4)" />
+  <text x="60" y="748" font-family="'Inter', system-ui, sans-serif" font-size="14" fill="#cbd5e1">Authentic Hotel Photograph Asset • Ref: room-triple.png</text>
+  <text x="1140" y="748" text-anchor="end" font-family="'Inter', system-ui, sans-serif" font-size="14" font-weight="700" fill="#34d399">Booking: +91 62966 63717</text>
+</svg>
