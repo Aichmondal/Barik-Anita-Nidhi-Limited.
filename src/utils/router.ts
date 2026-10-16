@@ -13,9 +13,10 @@ import { renderContact } from '../components/contact';
 import { renderCompanySection } from '../components/company';
 import { renderOurProjectsPage } from '../components/projects-page';
 import { renderPropertyDetailPage } from '../components/property-detail-page';
+import { renderCareerPage, setupCareerPageInteractions } from '../components/career-page';
 import { setup3dScrollEffects } from './scroll-3d';
 
-export type AppRoute = 'home' | 'projects' | 'property-detail';
+export type AppRoute = 'home' | 'projects' | 'property-detail' | 'career';
 
 export interface RouteMatch {
   route: AppRoute;
@@ -28,6 +29,10 @@ export function parseCurrentLocation(): RouteMatch {
   const hash = window.location.hash;
 
   // 1. Check pathname first
+  if (path === '/career' || path === '/carrier') {
+    return { route: 'career', params: {}, hash: hash ? hash.substring(1) : undefined };
+  }
+
   if (path === '/our-projects' || path === '/our-projects/') {
     return { route: 'projects', params: {} };
   }
@@ -37,7 +42,11 @@ export function parseCurrentLocation(): RouteMatch {
     return { route: 'property-detail', params: { slug: slug || 'riverview-homestay' }, hash: hash ? hash.substring(1) : undefined };
   }
 
-  // 2. Check hash fallback (e.g. #/our-projects or #our-projects)
+  // 2. Check hash fallback (e.g. #/career, #/our-projects)
+  if (hash === '#/career' || hash === '#career' || hash === '#/carrier' || hash === '#carrier') {
+    return { route: 'career', params: {} };
+  }
+
   if (hash === '#/our-projects' || hash === '#our-projects') {
     return { route: 'projects', params: {} };
   }
@@ -60,6 +69,13 @@ export function renderRoute(routeMatch: RouteMatch): void {
       document.title = 'Our Projects - Eco Homestays & Community Initiatives | BARIK ANITA NIDHI LIMITED';
       mainContent.innerHTML = renderOurProjectsPage();
       window.scrollTo({ top: 0, behavior: 'instant' });
+      break;
+
+    case 'career':
+      document.title = '2026 Recruitment - Career Opportunity | BARIK ANITA NIDHI LIMITED';
+      mainContent.innerHTML = renderCareerPage();
+      window.scrollTo({ top: 0, behavior: 'instant' });
+      setupCareerPageInteractions();
       break;
 
     case 'property-detail': {
@@ -188,6 +204,13 @@ export function setupRouter(): void {
       return;
     }
 
+    // Link directly to /career or /carrier
+    if (href === '/career' || href === '/carrier') {
+      e.preventDefault();
+      navigateTo(href);
+      return;
+    }
+
     // Link directly to /our-projects or /our-projects/...
     if (href === '/our-projects' || href.startsWith('/our-projects/')) {
       e.preventDefault();
@@ -208,13 +231,18 @@ export function setupRouter(): void {
       const targetHash = href.substring(1);
       const match = parseCurrentLocation();
 
+      if (targetHash === 'career' || targetHash === 'carrier') {
+        navigateTo('/career');
+        return;
+      }
+
       if (targetHash === 'our-projects') {
         navigateTo('/our-projects');
         return;
       }
 
       if (match.route !== 'home') {
-        // If we are on /our-projects, navigate back to home with the hash!
+        // If we are on /our-projects or /career, navigate back to home with the hash!
         navigateTo('/', targetHash);
       } else {
         // Already on home, smooth scroll
@@ -257,7 +285,15 @@ function updateNavActiveState(currentRoute: AppRoute): void {
     const id = link.getAttribute('id') || '';
     const href = link.getAttribute('href') || '';
 
-    if (currentRoute === 'projects' || currentRoute === 'property-detail') {
+    if (currentRoute === 'career') {
+      if (id === 'nav-career' || id === 'mobile-nav-career' || href === '/career' || href === '/carrier') {
+        link.classList.add('active');
+        link.setAttribute('aria-current', 'page');
+      } else {
+        link.classList.remove('active');
+        link.removeAttribute('aria-current');
+      }
+    } else if (currentRoute === 'projects' || currentRoute === 'property-detail') {
       if (id === 'nav-projects' || id === 'mobile-nav-projects' || href === '/our-projects') {
         link.classList.add('active');
         link.setAttribute('aria-current', 'page');
@@ -266,7 +302,7 @@ function updateNavActiveState(currentRoute: AppRoute): void {
         link.removeAttribute('aria-current');
       }
     } else if (currentRoute === 'home') {
-      if (id === 'nav-projects' || id === 'mobile-nav-projects' || href === '/our-projects') {
+      if (id === 'nav-projects' || id === 'mobile-nav-projects' || href === '/our-projects' || id === 'nav-career' || href === '/career') {
         link.classList.remove('active');
         link.removeAttribute('aria-current');
       }
