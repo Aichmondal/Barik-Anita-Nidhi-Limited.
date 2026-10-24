@@ -33,7 +33,7 @@ export function renderHeader(): string {
     <div class="header-container">
       <!-- Brand / Logo Area -->
       <div class="brand-container" id="header-brand">
-        <a href="/" class="brand-logo-link" aria-label="${company.name}">
+        <a href="#home" class="brand-logo-link" aria-label="${company.name}">
           <img
             src="https://res.cloudinary.com/qfyvlsqf/image/upload/f_auto,q_auto/LOGO_1"
             alt="${company.name} logo"
@@ -43,7 +43,7 @@ export function renderHeader(): string {
             loading="eager"
           />
         </a>
-        <a href="/" class="brand-text-block brand-text-link" aria-label="${company.name}">
+        <a href="#home" class="brand-text-block brand-text-link" aria-label="${company.name}">
           <span class="brand-title">${company.name}</span>
           <span class="brand-tagline">${company.tagline}</span>
         </a>

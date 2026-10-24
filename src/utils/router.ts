@@ -1,7 +1,8 @@
 /**
- * Client-Side Router for BARIK ANITA NIDHI LIMITED
- * Supports direct path routing (/our-projects, /our-projects/riverview-homestay),
- * hash fallback (#/our-projects), browser back/forward, and smooth section scrolling.
+ * Client-Side Hash-Based Router for BARIK ANITA NIDHI LIMITED
+ * Supports hash-based routing (#home, #banking-services, #our-projects, #career, #contact),
+ * persistent view containers, hashchange listener, page-load hash checking,
+ * and seamless refresh handling on /#career, /#our-projects, etc.
  */
 
 import { renderHero } from '../components/hero';
@@ -21,109 +22,148 @@ export type AppRoute = 'home' | 'projects' | 'property-detail' | 'career';
 export interface RouteMatch {
   route: AppRoute;
   params: Record<string, string>;
-  hash?: string;
+  targetSection?: string;
+  subHash?: string;
 }
 
+/**
+ * Parse route and parameters from the current URL hash and pathname
+ */
 export function parseCurrentLocation(): RouteMatch {
+  const rawHash = window.location.hash || '';
+  let cleanHash = rawHash.replace(/^#\/?/, '').trim();
   const path = window.location.pathname.replace(/\/$/, '') || '/';
-  const hash = window.location.hash;
 
-  // 1. Check pathname first
-  if (path === '/career' || path === '/carrier') {
-    return { route: 'career', params: {}, hash: hash ? hash.substring(1) : undefined };
+  // Fallback for direct pathname access (e.g. /career, /our-projects)
+  if (!cleanHash) {
+    if (path === '/career' || path === '/carrier') {
+      cleanHash = 'career';
+      window.history.replaceState(null, '', '#career');
+    } else if (path === '/our-projects' || path === '/projects') {
+      cleanHash = 'our-projects';
+      window.history.replaceState(null, '', '#our-projects');
+    } else if (path.startsWith('/our-projects/')) {
+      const slug = path.replace('/our-projects/', '').split('/')[0];
+      cleanHash = `our-projects/${slug}`;
+      window.history.replaceState(null, '', `#our-projects/${slug}`);
+    }
   }
 
-  if (path === '/our-projects' || path === '/our-projects/') {
-    return { route: 'projects', params: {} };
-  }
-
-  if (path.startsWith('/our-projects/')) {
-    const slug = path.replace('/our-projects/', '').split('/')[0];
-    return { route: 'property-detail', params: { slug: slug || 'riverview-homestay' }, hash: hash ? hash.substring(1) : undefined };
-  }
-
-  // 2. Check hash fallback (e.g. #/career, #/our-projects)
-  if (hash === '#/career' || hash === '#career' || hash === '#/carrier' || hash === '#carrier') {
+  // 1. Career Route
+  if (cleanHash === 'career' || cleanHash === 'carrier') {
     return { route: 'career', params: {} };
   }
 
-  if (hash === '#/our-projects' || hash === '#our-projects') {
+  // 2. Our Projects Route
+  if (cleanHash === 'our-projects' || cleanHash === 'projects') {
     return { route: 'projects', params: {} };
   }
 
-  if (hash.startsWith('#/our-projects/') || hash.startsWith('#our-projects/')) {
-    const raw = hash.replace(/^#\/?our-projects\//, '').split('/')[0];
-    const [slug, subHash] = raw.split('#');
-    return { route: 'property-detail', params: { slug: slug || 'riverview-homestay' }, hash: subHash };
+  // 3. Property Detail Route (e.g. #our-projects/riverview-homestay or #our-projects/hotel-newa-gangtok#gallery)
+  if (
+    cleanHash.startsWith('our-projects/') ||
+    cleanHash.startsWith('projects/') ||
+    cleanHash.startsWith('property-')
+  ) {
+    let slug = 'riverview-homestay';
+    let subHash: string | undefined;
+
+    if (cleanHash.startsWith('our-projects/')) {
+      const parts = cleanHash.replace('our-projects/', '').split('#');
+      slug = parts[0] || 'riverview-homestay';
+      subHash = parts[1];
+    } else if (cleanHash.startsWith('projects/')) {
+      const parts = cleanHash.replace('projects/', '').split('#');
+      slug = parts[0] || 'riverview-homestay';
+      subHash = parts[1];
+    } else if (cleanHash.startsWith('property-')) {
+      slug = cleanHash.replace('property-', '');
+    }
+
+    return {
+      route: 'property-detail',
+      params: { slug },
+      subHash
+    };
   }
 
-  return { route: 'home', params: {}, hash: hash ? hash.substring(1) : undefined };
+  // 4. Home Route and Home Sections (e.g. #home, #banking-services, #finance-services, #contact, #gold-loan, #directors, #company)
+  const homeSections = [
+    'home',
+    'finance-services',
+    'banking-services',
+    'gold-loan',
+    'directors',
+    'contact',
+    'company'
+  ];
+
+  const targetSection = cleanHash && homeSections.includes(cleanHash) ? cleanHash : (cleanHash || 'home');
+
+  return {
+    route: 'home',
+    params: {},
+    targetSection
+  };
 }
 
-export function renderRoute(routeMatch: RouteMatch): void {
-  const mainContent = document.getElementById('main-content');
-  if (!mainContent) return;
+/**
+ * Handle view switching and smooth scrolling based on current route
+ */
+export function handleHashNavigation(): void {
+  const match = parseCurrentLocation();
 
-  switch (routeMatch.route) {
-    case 'projects':
-      document.title = 'Our Projects - Eco Homestays & Community Initiatives | BARIK ANITA NIDHI LIMITED';
-      mainContent.innerHTML = renderOurProjectsPage();
+  const homeView = document.getElementById('view-home');
+  const projectsView = document.getElementById('our-projects');
+  const careerView = document.getElementById('career');
+  const propertyView = document.getElementById('view-property-detail');
+
+  // Deactivate all views first
+  [homeView, projectsView, careerView, propertyView].forEach((view) => {
+    view?.classList.remove('is-active');
+  });
+
+  switch (match.route) {
+    case 'career':
+      careerView?.classList.add('is-active');
+      document.title = '2026 Recruitment - Career Opportunity | BARIK ANITA NIDHI LIMITED';
       window.scrollTo({ top: 0, behavior: 'instant' });
+      updateNavActiveState('career');
       break;
 
-    case 'career':
-      document.title = '2026 Recruitment - Career Opportunity | BARIK ANITA NIDHI LIMITED';
-      mainContent.innerHTML = renderCareerPage();
+    case 'projects':
+      projectsView?.classList.add('is-active');
+      document.title = 'Our Projects - Eco Homestays & Community Initiatives | BARIK ANITA NIDHI LIMITED';
       window.scrollTo({ top: 0, behavior: 'instant' });
-      setupCareerPageInteractions();
+      updateNavActiveState('projects');
       break;
 
     case 'property-detail': {
-      const slug = routeMatch.params.slug || 'riverview-homestay';
+      const slug = match.params.slug || 'riverview-homestay';
+      if (propertyView) {
+        if (propertyView.getAttribute('data-slug') !== slug) {
+          propertyView.innerHTML = renderPropertyDetailPage(slug);
+          propertyView.setAttribute('data-slug', slug);
+          setupPropertyLightbox();
+        }
+        propertyView.classList.add('is-active');
+      }
+
       if (slug === 'hotel-newa-gangtok') {
         document.title = 'Hotel Newa, Gangtok - MG Market, Sikkim | Our Projects | BARIK ANITA NIDHI LIMITED';
       } else {
         document.title = 'Riverview Homestay, Darjeeling - Sittong Jogighat | Our Projects | BARIK ANITA NIDHI LIMITED';
       }
-      mainContent.innerHTML = renderPropertyDetailPage(slug);
-      if (routeMatch.hash) {
+
+      updateNavActiveState('projects');
+
+      if (match.subHash === 'gallery') {
         setTimeout(() => {
-          const el = document.getElementById(routeMatch.hash!);
-          if (el) {
+          const galleryEl = document.getElementById('gallery');
+          if (galleryEl) {
             const header = document.getElementById('site-header');
             const offset = (header?.offsetHeight || 80) + 10;
-            const top = el.getBoundingClientRect().top + window.pageYOffset - offset;
-            window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
-          }
-        }, 120);
-      } else {
-        window.scrollTo({ top: 0, behavior: 'instant' });
-      }
-      setupPropertyLightbox();
-      break;
-    }
-
-    case 'home':
-    default:
-      document.title = 'BARIK ANITA NIDHI LIMITED | Financial & Banking Services';
-      // Homepage: Our Projects is hidden from here
-      mainContent.innerHTML = `
-        ${renderHero()}
-        ${renderFinanceServices()}
-        ${renderBankingServices()}
-        ${renderGoldLoan()}
-        ${renderDirectors()}
-        ${renderContact()}
-        ${renderCompanySection()}
-      `;
-
-      if (routeMatch.hash) {
-        setTimeout(() => {
-          const el = document.getElementById(routeMatch.hash!);
-          if (el) {
-            const header = document.getElementById('site-header');
-            const offset = (header?.offsetHeight || 80) + 10;
-            const top = el.getBoundingClientRect().top + window.pageYOffset - offset;
+            const top = galleryEl.getBoundingClientRect().top + window.pageYOffset - offset;
             window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
           }
         }, 80);
@@ -131,34 +171,45 @@ export function renderRoute(routeMatch: RouteMatch): void {
         window.scrollTo({ top: 0, behavior: 'instant' });
       }
       break;
+    }
+
+    case 'home':
+    default: {
+      homeView?.classList.add('is-active');
+      document.title = 'BARIK ANITA NIDHI LIMITED | Financial & Banking Services';
+
+      const targetId = match.targetSection;
+      if (targetId && targetId !== 'home') {
+        setTimeout(() => {
+          const targetEl = document.getElementById(targetId);
+          if (targetEl) {
+            const header = document.getElementById('site-header');
+            const offset = (header?.offsetHeight || 80) + 10;
+            const top = targetEl.getBoundingClientRect().top + window.pageYOffset - offset;
+            window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+          }
+        }, 60);
+        updateNavActiveState(targetId);
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        updateNavActiveState('home');
+      }
+      break;
+    }
   }
-
-  // Re-run animation and 3D visual bindings
-  setupScrollReveals();
-  setup3dScrollEffects();
-  updateNavActiveState(routeMatch.route);
-}
-
-export function navigateTo(targetPath: string, hash?: string): void {
-  let pathOnly = targetPath;
-  let targetHash = hash;
-  if (!targetHash && targetPath.includes('#')) {
-    const parts = targetPath.split('#');
-    pathOnly = parts[0];
-    targetHash = parts[1];
-  }
-
-  const targetClean = pathOnly.replace(/\/$/, '') || '/';
-  const fullUrl = targetHash ? `${targetClean}#${targetHash}` : targetClean;
-
-  if (window.location.pathname !== targetClean || window.location.hash !== (targetHash ? `#${targetHash}` : '')) {
-    window.history.pushState(null, '', fullUrl);
-  }
-
-  const match = parseCurrentLocation();
-  renderRoute(match);
 
   // Close mobile drawer if open
+  closeMobileMenu();
+
+  // Re-run scroll animations
+  setupScrollReveals();
+  setup3dScrollEffects();
+}
+
+/**
+ * Close mobile slide-down menu
+ */
+function closeMobileMenu(): void {
   const mobileMenu = document.getElementById('mobile-menu');
   const menuToggle = document.getElementById('mobile-menu-toggle');
   if (mobileMenu?.classList.contains('menu-open') && menuToggle) {
@@ -169,20 +220,94 @@ export function navigateTo(targetPath: string, hash?: string): void {
   }
 }
 
+/**
+ * Updates active class on desktop and mobile navigation links
+ */
+function updateNavActiveState(activeTarget: string): void {
+  const navLinks = document.querySelectorAll<HTMLAnchorElement>('.nav-link, .mobile-nav-link');
+  const targetHash = activeTarget.startsWith('#') ? activeTarget : `#${activeTarget}`;
+
+  navLinks.forEach((link) => {
+    const id = link.getAttribute('id') || '';
+    const href = link.getAttribute('href') || '';
+
+    if (activeTarget === 'career') {
+      if (id === 'nav-career' || id === 'mobile-nav-career' || href === '#career' || href === '#/career') {
+        link.classList.add('active');
+        link.setAttribute('aria-current', 'page');
+      } else {
+        link.classList.remove('active');
+        link.removeAttribute('aria-current');
+      }
+    } else if (activeTarget === 'projects' || activeTarget === 'property-detail') {
+      if (id === 'nav-projects' || id === 'mobile-nav-projects' || href === '#our-projects' || href === '#projects' || href === '#/our-projects') {
+        link.classList.add('active');
+        link.setAttribute('aria-current', 'page');
+      } else {
+        link.classList.remove('active');
+        link.removeAttribute('aria-current');
+      }
+    } else {
+      // Home sections (e.g. #home, #banking-services, #finance-services, #contact, etc.)
+      if (href === targetHash || (targetHash === '#home' && (href === '#home' || href === '/'))) {
+        link.classList.add('active');
+        link.setAttribute('aria-current', 'page');
+      } else {
+        link.classList.remove('active');
+        link.removeAttribute('aria-current');
+      }
+    }
+  });
+}
+
+/**
+ * Initialize all views into #main-content and register hashchange / click listeners
+ */
 export function setupRouter(): void {
-  // Listen to popstate (back/forward navigation)
-  window.addEventListener('popstate', () => {
-    const match = parseCurrentLocation();
-    renderRoute(match);
-  });
+  const mainContent = document.getElementById('main-content');
+  if (!mainContent) return;
 
-  // Listen to hashchange
+  // Mount persistent view containers into #main-content
+  mainContent.innerHTML = `
+    <!-- 1. Home View Container (Hero, Finance, Banking, Gold Loan, Directors, Contact, Company) -->
+    <div id="view-home" class="page-view-container is-active">
+      ${renderHero()}
+      ${renderFinanceServices()}
+      ${renderBankingServices()}
+      ${renderGoldLoan()}
+      ${renderDirectors()}
+      ${renderContact()}
+      ${renderCompanySection()}
+    </div>
+
+    <!-- 2. Dedicated Our Projects View Container -->
+    <div id="our-projects" class="page-view-container">
+      ${renderOurProjectsPage()}
+    </div>
+
+    <!-- 3. Dedicated Career View Container -->
+    <div id="career" class="page-view-container">
+      ${renderCareerPage()}
+    </div>
+
+    <!-- 4. Dedicated Property Detail View Container -->
+    <div id="view-property-detail" class="page-view-container"></div>
+  `;
+
+  // Initialize Career Page recruitment modal
+  setupCareerPageInteractions();
+
+  // Listen for hash changes (e.g. clicking #career, #our-projects, #contact)
   window.addEventListener('hashchange', () => {
-    const match = parseCurrentLocation();
-    renderRoute(match);
+    handleHashNavigation();
   });
 
-  // Global click delegator for links
+  // Listen for popstate (browser back/forward)
+  window.addEventListener('popstate', () => {
+    handleHashNavigation();
+  });
+
+  // Global click delegator for link navigation and drawer close
   document.addEventListener('click', (e) => {
     const target = e.target as HTMLElement | null;
     const anchor = target?.closest<HTMLAnchorElement>('a');
@@ -191,123 +316,63 @@ export function setupRouter(): void {
     const href = anchor.getAttribute('href');
     if (!href) return;
 
-    // Skip mailto, tel, javascript, external links
-    if (href.startsWith('tel:') || href.startsWith('mailto:') || href.startsWith('http://') || href.startsWith('https://')) {
+    // Skip external protocols
+    if (
+      href.startsWith('tel:') ||
+      href.startsWith('mailto:') ||
+      href.startsWith('http://') ||
+      href.startsWith('https://')
+    ) {
       return;
     }
 
-    // Explicit route attribute
-    const dataRoute = anchor.getAttribute('data-route');
-    if (dataRoute) {
-      e.preventDefault();
-      navigateTo(dataRoute);
-      return;
-    }
-
-    // Link directly to /career or /carrier
+    // Direct pathname conversions to hash
     if (href === '/career' || href === '/carrier') {
       e.preventDefault();
-      navigateTo(href);
+      window.location.hash = '#career';
       return;
     }
 
-    // Link directly to /our-projects or /our-projects/...
-    if (href === '/our-projects' || href.startsWith('/our-projects/')) {
+    if (href === '/our-projects' || href === '/projects') {
       e.preventDefault();
-      navigateTo(href);
+      window.location.hash = '#our-projects';
       return;
     }
 
-    // Link directly to /
+    if (href.startsWith('/our-projects/')) {
+      e.preventDefault();
+      const slug = href.replace('/our-projects/', '');
+      window.location.hash = `#our-projects/${slug}`;
+      return;
+    }
+
     if (href === '/') {
       e.preventDefault();
-      navigateTo('/');
+      window.location.hash = '#home';
       return;
     }
 
-    // In-page anchor hash link (e.g. #finance-services, #contact, #home)
-    if (href.startsWith('#')) {
+    // When clicking a hash link matching the current hash (e.g. clicking #contact again while on #contact)
+    if (href.startsWith('#') && href === window.location.hash) {
       e.preventDefault();
-      const targetHash = href.substring(1);
-      const match = parseCurrentLocation();
-
-      if (targetHash === 'career' || targetHash === 'carrier') {
-        navigateTo('/career');
-        return;
-      }
-
-      if (targetHash === 'our-projects') {
-        navigateTo('/our-projects');
-        return;
-      }
-
-      if (match.route !== 'home') {
-        // If we are on /our-projects or /career, navigate back to home with the hash!
-        navigateTo('/', targetHash);
-      } else {
-        // Already on home, smooth scroll
-        const targetElement = document.getElementById(targetHash);
-        if (targetElement) {
-          const header = document.getElementById('site-header');
-          const headerOffset = header?.offsetHeight || 80;
-          const elementPosition = targetElement.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-          window.scrollTo({
-            top: Math.max(0, offsetPosition),
-            behavior: 'smooth'
-          });
-
-          // Close mobile menu if open
-          const mobileMenu = document.getElementById('mobile-menu');
-          const menuToggle = document.getElementById('mobile-menu-toggle');
-          if (mobileMenu?.classList.contains('menu-open') && menuToggle) {
-            mobileMenu.classList.remove('menu-open');
-            mobileMenu.setAttribute('aria-hidden', 'true');
-            menuToggle.setAttribute('aria-expanded', 'false');
-            document.body.classList.remove('mobile-nav-active');
-          }
-
-          window.history.pushState(null, '', href);
-        }
-      }
+      handleHashNavigation();
     }
   });
 
-  // Initial render
-  const initialMatch = parseCurrentLocation();
-  renderRoute(initialMatch);
+  // Initial check on page load / refresh (handles /#career, /#our-projects, /#contact, etc.)
+  handleHashNavigation();
 }
 
-function updateNavActiveState(currentRoute: AppRoute): void {
-  const navLinks = document.querySelectorAll<HTMLAnchorElement>('.nav-link, .mobile-nav-link');
-  navLinks.forEach((link) => {
-    const id = link.getAttribute('id') || '';
-    const href = link.getAttribute('href') || '';
-
-    if (currentRoute === 'career') {
-      if (id === 'nav-career' || id === 'mobile-nav-career' || href === '/career' || href === '/carrier') {
-        link.classList.add('active');
-        link.setAttribute('aria-current', 'page');
-      } else {
-        link.classList.remove('active');
-        link.removeAttribute('aria-current');
-      }
-    } else if (currentRoute === 'projects' || currentRoute === 'property-detail') {
-      if (id === 'nav-projects' || id === 'mobile-nav-projects' || href === '/our-projects') {
-        link.classList.add('active');
-        link.setAttribute('aria-current', 'page');
-      } else {
-        link.classList.remove('active');
-        link.removeAttribute('aria-current');
-      }
-    } else if (currentRoute === 'home') {
-      if (id === 'nav-projects' || id === 'mobile-nav-projects' || href === '/our-projects' || id === 'nav-career' || href === '/career') {
-        link.classList.remove('active');
-        link.removeAttribute('aria-current');
-      }
-    }
-  });
+/**
+ * Programmatic navigation helper
+ */
+export function navigateTo(targetHash: string): void {
+  const clean = targetHash.startsWith('#') ? targetHash : `#${targetHash}`;
+  if (window.location.hash === clean) {
+    handleHashNavigation();
+  } else {
+    window.location.hash = clean;
+  }
 }
 
 function setupScrollReveals(): void {

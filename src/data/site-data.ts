@@ -133,8 +133,8 @@ export const siteData: SiteData = {
     { id: 'nav-services', label: 'Services', href: '#finance-services' },
     { id: 'nav-banking', label: 'Banking', href: '#banking-services' },
     { id: 'nav-gold-loan', label: 'Gold Loan', href: '#gold-loan' },
-    { id: 'nav-projects', label: 'Our Projects', href: '/our-projects' },
-    { id: 'nav-career', label: 'Career', href: '/career' },
+    { id: 'nav-projects', label: 'Our Projects', href: '#our-projects' },
+    { id: 'nav-career', label: 'Career', href: '#career' },
     { id: 'nav-directors', label: 'Directors', href: '#directors' },
     { id: 'nav-contact', label: 'Contact', href: '#contact' },
     { id: 'nav-about', label: 'About', href: '#company' }

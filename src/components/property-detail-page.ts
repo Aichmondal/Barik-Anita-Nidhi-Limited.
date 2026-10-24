@@ -12,7 +12,7 @@ export function renderPropertyDetailPage(slug: string): string {
       <div class="container section-padding text-center">
         <h2>Property Not Found</h2>
         <p>The requested destination could not be located.</p>
-        <a href="/our-projects" class="btn btn-primary" data-route="/our-projects">View All Projects</a>
+        <a href="#our-projects" class="btn btn-primary">View All Projects</a>
       </div>
     `;
   }
@@ -87,7 +87,7 @@ export function renderPropertyDetailPage(slug: string): string {
           <div class="breadcrumb-container-flex">
             <ol class="breadcrumb-list">
               <li class="breadcrumb-item">
-                <a href="/" class="breadcrumb-link" data-route="/">
+                <a href="#home" class="breadcrumb-link">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                     <polyline points="9 22 9 12 15 12 15 22"></polyline>
@@ -97,13 +97,13 @@ export function renderPropertyDetailPage(slug: string): string {
               </li>
               <li class="breadcrumb-separator" aria-hidden="true">/</li>
               <li class="breadcrumb-item">
-                <a href="/our-projects" class="breadcrumb-link" data-route="/our-projects">Our Projects</a>
+                <a href="#our-projects" class="breadcrumb-link">Our Projects</a>
               </li>
               <li class="breadcrumb-separator" aria-hidden="true">/</li>
               <li class="breadcrumb-item breadcrumb-current" aria-current="page">${name}</li>
             </ol>
 
-            <a href="/our-projects" class="btn-back-link" data-route="/our-projects">
+            <a href="#our-projects" class="btn-back-link">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <line x1="19" y1="12" x2="5" y2="12"></line>
                 <polyline points="12 19 5 12 12 5"></polyline>
@@ -274,7 +274,7 @@ export function renderPropertyDetailPage(slug: string): string {
                         </svg>
                         ${other.location.displayShort}
                       </p>
-                      <a href="/our-projects/${other.slug}" class="btn-cross-explore" data-route="/our-projects/${other.slug}">
+                      <a href="#our-projects/${other.slug}" class="btn-cross-explore">
                         <span>Explore ${other.name}</span>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                           <line x1="5" y1="12" x2="19" y2="12"></line>

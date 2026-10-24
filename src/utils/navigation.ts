@@ -65,48 +65,15 @@ export function setupNavigation(): void {
     });
   }
 
-  // 3. Smooth scrolling for internal anchor links on same page
-  navLinks.forEach((link) => {
-    link.addEventListener('click', (e) => {
-      const href = link.getAttribute('href');
-      if (href && href.startsWith('#')) {
-        const targetId = href.substring(1);
-        const targetElement = document.getElementById(targetId);
-
-        if (targetElement) {
-          e.preventDefault();
-          // Close mobile menu if open
-          if (mobileMenu?.classList.contains('menu-open') && menuToggle) {
-            mobileMenu.classList.remove('menu-open');
-            mobileMenu.setAttribute('aria-hidden', 'true');
-            menuToggle.setAttribute('aria-expanded', 'false');
-            document.body.classList.remove('mobile-nav-active');
-          }
-
-          const headerOffset = header?.offsetHeight || 80;
-          const elementPosition = targetElement.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-          window.scrollTo({
-            top: Math.max(0, offsetPosition),
-            behavior: 'smooth'
-          });
-
-          // Update active link state
-          updateActiveLink(href);
-
-          // Update browser URL hash without jump
-          history.pushState(null, '', href);
-        }
-      }
-    });
-  });
-
-  // 4. Highlight active nav items on scroll using IntersectionObserver
+  // 3. Highlight active nav items on scroll using IntersectionObserver (only when on Home view)
   const sections = document.querySelectorAll<HTMLElement>('section[id], header[id="home"]');
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(
       (entries) => {
+        const homeView = document.getElementById('view-home');
+        if (homeView && !homeView.classList.contains('is-active')) {
+          return;
+        }
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const id = entry.target.getAttribute('id');

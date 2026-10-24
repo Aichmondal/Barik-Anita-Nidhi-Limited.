@@ -21,7 +21,7 @@ export function renderFooter(): string {
         <!-- Brand Info Column -->
         <div class="footer-col footer-brand-col">
           <div class="footer-brand">
-            <a href="/" class="brand-logo-link footer-logo-link" aria-label="${company.name}">
+            <a href="#home" class="brand-logo-link footer-logo-link" aria-label="${company.name}">
               <img 
                 src="https://res.cloudinary.com/qfyvlsqf/image/upload/f_auto,q_auto/LOGO_1" 
                 alt="${company.name} logo" 
@@ -65,8 +65,8 @@ export function renderFooter(): string {
             <li><a href="#banking-services" class="footer-nav-link">Fixed Deposit (FD)</a></li>
             <li><a href="#banking-services" class="footer-nav-link">Monthly Income Scheme (MIS)</a></li>
             <li><a href="#gold-loan" class="footer-nav-link">Gold Loan (Upcoming)</a></li>
-            <li><a href="/our-projects/riverview-homestay" class="footer-nav-link" data-route="/our-projects/riverview-homestay">Riverview Homestay, Darjeeling</a></li>
-            <li><a href="/our-projects/hotel-newa-gangtok" class="footer-nav-link" data-route="/our-projects/hotel-newa-gangtok">Hotel Newa (Gangtok, Sikkim)</a></li>
+            <li><a href="#our-projects/riverview-homestay" class="footer-nav-link">Riverview Homestay, Darjeeling</a></li>
+            <li><a href="#our-projects/hotel-newa-gangtok" class="footer-nav-link">Hotel Newa (Gangtok, Sikkim)</a></li>
           </ul>
         </div>
 

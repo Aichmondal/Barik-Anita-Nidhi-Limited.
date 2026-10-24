@@ -19,7 +19,7 @@ export function renderOurProjectsPage(): string {
         <div class="container">
           <ol class="breadcrumb-list">
             <li class="breadcrumb-item">
-              <a href="/" class="breadcrumb-link" data-route="/">
+              <a href="#home" class="breadcrumb-link">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                   <polyline points="9 22 9 12 15 12 15 22"></polyline>
@@ -187,9 +187,8 @@ function renderDedicatedPropertyCard(property: ProjectProperty): string {
         <!-- Action CTAs -->
         <div class="property-card-actions">
           <a 
-            href="/our-projects/${slug}" 
+            href="#our-projects/${slug}" 
             class="btn-property-primary" 
-            data-route="/our-projects/${slug}"
             aria-label="Explore Project details for ${name}"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -202,9 +201,8 @@ function renderDedicatedPropertyCard(property: ProjectProperty): string {
           </a>
 
           <a 
-            href="/our-projects/${slug}#gallery" 
+            href="#our-projects/${slug}#gallery" 
             class="btn-property-secondary btn-property-gallery" 
-            data-route="/our-projects/${slug}#gallery"
             aria-label="View Gallery for ${name}"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">

@@ -5622,5 +5622,16 @@ body.modal-open {
   }
 }
 
+/* ==========================================================================
+   Page View Containers for Hash-Based Single-Page Routing
+   ========================================================================== */
+.page-view-container {
+  display: none;
+}
+
+.page-view-container.is-active {
+  display: block;
+}
+
 
 
