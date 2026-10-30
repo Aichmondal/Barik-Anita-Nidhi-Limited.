@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.barikanitanidhilimited.amb-co.in/sitemap.xml
