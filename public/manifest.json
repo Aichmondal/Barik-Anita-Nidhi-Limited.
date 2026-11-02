@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+  "id": "/",
+  "name": "BARIK ANITA NIDHI LIMITED",
+  "short_name": "BANL",
+  "description": "Official corporate web application of BARIK ANITA NIDHI LIMITED (CIN: U65990WB2022PLN252823), a Nidhi company incorporated under the Companies Act, providing mutual benefit deposit schemes, member loans, and community financial services.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": [
+    "standalone",
+    "minimal-ui",
+    "browser"
+  ],
+  "orientation": "portrait-primary",
+  "background_color": "#25205F",
+  "theme_color": "#25205F",
+  "categories": [
+    "finance",
+    "business"
+  ],
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Financial Services",
+      "short_name": "Services",
+      "description": "View Group Loans and Micro Business Loans",
+      "url": "/#finance-services",
+      "icons": [
+        {
+          "src": "/pwa-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Deposit Schemes",
+      "short_name": "Banking",
+      "description": "Fixed Deposits, Recurring Deposits & Monthly Income Scheme",
+      "url": "/#banking-services",
+      "icons": [
+        {
+          "src": "/pwa-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Our Projects",
+      "short_name": "Projects",
+      "description": "Eco homestays and community hospitality projects",
+      "url": "/#our-projects",
+      "icons": [
+        {
+          "src": "/pwa-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Contact Desk",
+      "short_name": "Contact",
+      "description": "Office inquiries and member branch desk",
+      "url": "/#contact",
+      "icons": [
+        {
+          "src": "/pwa-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}

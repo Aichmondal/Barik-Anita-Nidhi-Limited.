@@ -8,6 +8,7 @@ import { renderFooter } from './components/footer';
 import { renderMobileBar } from './components/mobile-bar';
 import { setupNavigation } from './utils/navigation';
 import { setupRouter } from './utils/router';
+import { initPWA } from './utils/pwa';
 
 function initApp(): void {
   const appRoot = document.getElementById('app');
@@ -30,6 +31,9 @@ function initApp(): void {
 
   // Initialize multi-page routing (/ for Home, /our-projects for Projects, /our-projects/riverview-homestay for Property Detail)
   setupRouter();
+
+  // Initialize PWA service worker, install prompts, and connectivity watcher
+  initPWA();
 }
 
 // Boot application when DOM is ready

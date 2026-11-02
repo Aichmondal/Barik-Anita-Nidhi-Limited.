@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Offline Mode - BARIK ANITA NIDHI LIMITED</title>
+    <meta name="theme-color" content="#25205F" />
+    <link rel="icon" type="image/png" href="/pwa-192x192.png" />
+    <style>
+      *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background-color: #f8fafc;
+        color: #1e293b;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+      }
+      .offline-card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 20px;
+        padding: 40px 32px;
+        max-width: 480px;
+        width: 100%;
+        text-align: center;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+      }
+      .brand-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: #f1f5f9;
+        padding: 8px 16px;
+        border-radius: 9999px;
+        margin-bottom: 24px;
+      }
+      .brand-badge img {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+      }
+      .brand-name {
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: #25205F;
+        letter-spacing: 0.02em;
+      }
+      .offline-icon-wrap {
+        width: 72px;
+        height: 72px;
+        background: #fee2e2;
+        color: #dc2626;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+      h1 {
+        font-size: 1.6rem;
+        font-weight: 800;
+        color: #0f172a;
+        margin-bottom: 12px;
+      }
+      p {
+        font-size: 0.95rem;
+        color: #64748b;
+        line-height: 1.6;
+        margin-bottom: 24px;
+      }
+      .action-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 28px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 12px 20px;
+        border-radius: 10px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.2s ease;
+      }
+      .btn-primary {
+        background: #25205F;
+        color: #ffffff;
+        border: none;
+      }
+      .btn-primary:hover {
+        background: #1a1547;
+      }
+      .btn-secondary {
+        background: #f8fafc;
+        color: #334155;
+        border: 1px solid #cbd5e1;
+      }
+      .btn-secondary:hover {
+        background: #f1f5f9;
+      }
+      .helpdesk-block {
+        border-top: 1px solid #f1f5f9;
+        padding-top: 20px;
+      }
+      .helpdesk-title {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #94a3b8;
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+      .helpdesk-link {
+        color: #088740;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.05rem;
+      }
+      .helpdesk-link:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="offline-card">
+      <div class="brand-badge">
+        <img src="/pwa-192x192.png" alt="BANL Logo" width="28" height="28" />
+        <span class="brand-name">BARIK ANITA NIDHI LIMITED</span>
+      </div>
+
+      <div class="offline-icon-wrap" aria-hidden="true">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="1" y1="1" x2="23" y2="23"></line>
+          <path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"></path>
+          <path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"></path>
+          <path d="M10.71 5.05A16 16 0 0 1 22.58 9"></path>
+          <path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"></path>
+          <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+          <line x1="12" y1="20" x2="12.01" y2="20"></line>
+        </svg>
+      </div>
+
+      <h1>You're Currently Offline</h1>
+      <p>
+        No active internet connection was detected. Internet access is strictly required for online financial services, loan inquiries, deposit schemes, and member account operations. Please reconnect to continue, or contact our branch office directly by telephone below.
+      </p>
+
+      <div class="action-buttons">
+        <button type="button" class="btn btn-primary" onclick="window.location.reload()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="23 4 23 10 17 10"></polyline>
+            <polyline points="1 20 1 14 7 14"></polyline>
+            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+          </svg>
+          Retry Connection
+        </button>
+        <button type="button" class="btn btn-secondary" onclick="window.location.href='/'">
+          Return to Home
+        </button>
+      </div>
+
+      <div class="helpdesk-block">
+        <div class="helpdesk-title">Telephone Branch Desk</div>
+        <a href="tel:+919635224678" class="helpdesk-link">+91 963-522-4678</a>
+      </div>
+    </div>
+  </body>
+</html>
